@@ -1,0 +1,6 @@
+<h1><%= @job.name %></h1>
+<h2><%= @job.number %></h2>
+
+<% @job.releases.each do |release| %>
+  <p><%= link_to release.label, release_path(release) %></p>
+<% end %>

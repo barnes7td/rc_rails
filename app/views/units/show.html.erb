@@ -1,0 +1,15 @@
+<h1><%= @unit.name %></h1>
+<h2><%= @unit.unit_type %></h2>
+
+<table>
+  <tr>
+      <th width='100px'>Name</th>
+      <th width='100px'>Type</th>
+    </tr>
+  <% @unit.children.each do |child| %>
+    <tr>
+      <td width='100px'><%= child.name %></td>
+      <td width='100px'><%= child.unit_type %></td>
+    </tr>
+  <% end %>
+</table>

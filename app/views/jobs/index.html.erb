@@ -1,0 +1,8 @@
+<h1>Tuttle Jobs</h1>
+
+<% @jobs.each do |job| %>
+  <p>
+    <span><%= link_to "#{job.number}", job_path(job) %></span>
+    <span><%= job.name %></span>
+  </p>
+<% end %>
