@@ -1,13 +1,14 @@
 RcRails::Application.routes.draw do
 
-  get "drawings/show"
-
-  resources :jobs
-  resources :releases
   resources :drawings
-  resources :units
+  resources :counts
+  resources :job_navigators
 
-  root :to => 'jobs#index'
+  post 'job_navigators/create_job'
+  get 'jobs/:id', to: 'job_navigators#show_job'
+  get 'counts/:job_id/release/:id', to: 'counts#show_release'
+
+  root to: 'job_navigators#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

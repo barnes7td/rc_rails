@@ -1,0 +1,8 @@
+<h1><%= @release.job.name %></h1>
+<h2><%= "#{@release.job.number}   #{@release.label}" %></h2>
+
+<br>
+<h3>Sheets:</h3>
+<% @release.drawings.each do |drawing| %>
+  <p><%= link_to "#{drawing.number}", drawing_path(drawing) %></p>
+<% end %>

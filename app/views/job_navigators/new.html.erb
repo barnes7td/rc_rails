@@ -1,0 +1,11 @@
+<h3>Add a New Job</h3>
+
+<%= form_tag 'create_job' do %>
+  <%= label_tag :name, "Job Name" %>:
+  <%= text_field_tag :name %><br />
+
+  <%= label_tag :number, "Job Number" %>:
+  <%= text_field_tag :number %><br />
+
+  <%= submit_tag "Add Job" %>
+<% end %>

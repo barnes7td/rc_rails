@@ -1,0 +1,10 @@
+<h1>Tuttle Jobs</h1>
+
+<h3><%= link_to "New Job", new_job_navigator_path %></h3>
+
+<% @jobs.each do |job| %>
+  <p>
+    <span><%= link_to "#{job.number}", "jobs/#{job.id}" %></span>
+    <span><%= job.name %></span>
+  </p>
+<% end %>
