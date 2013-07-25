@@ -1,5 +1,5 @@
 class Navigator
   def self.jobs
-    Job.all
+    Job.all_jobs
   end
 end

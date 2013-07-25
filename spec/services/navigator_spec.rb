@@ -1,14 +1,19 @@
+require 'spec_format'
 require_relative "../../app/services/navigator.rb"
-require 'spec_helper'
+
 
 describe Navigator do
-  Job.stub!(:jobs).and_return(
-    [{ name: "Croton", number: "13-546" },
-     { name: "Newtown", number: "13-245" }] 
-  )
-
+  before {class Job; end}
+  
   it "finds all jobs" do
-    Navigator.jobs.should eq [{ name: "Croton", number: "13-546" },
-                              { name: "Newtown", number: "13-245" }]
+    Job.stub(:all_jobs).and_return(
+      [{ name: "Croton", number: "13-546" },
+       { name: "Newtown", number: "13-245" }] 
+    )
+    Navigator.jobs.should eq([{ name: "Croton", number: "13-546" },
+                              { name: "Newtown", number: "13-245" }])
   end
+
+  it 
+
 end
